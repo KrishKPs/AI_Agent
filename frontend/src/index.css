@@ -1,0 +1,96 @@
+:root {
+  color-scheme: dark;
+
+  /* -- surfaces: flat, near-black, sharp -- */
+  --bg: #050607;
+  --bg-elevated: #0b0d0f;
+  --bg-elevated-2: #111417;
+  --bg-hover: #171b1e;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.24);
+
+  /* -- text -- */
+  --text: #e8e6e0;
+  --text-dim: #9a9d95;
+  --text-faint: #5b5e57;
+
+  /* -- the one accent: terminal amber -- */
+  --accent: #ffb000;
+  --accent-strong: #ffd166;
+  --accent-bg: rgba(255, 176, 0, 0.14);
+  --accent-ink: #1a1200;
+  --accent-glow: rgba(255, 176, 0, 0.4);
+
+  /* -- functional colors: profit / loss, never reused for decoration -- */
+  --profit: #00e676;
+  --profit-bg: rgba(0, 230, 118, 0.12);
+  --loss: #ff5252;
+  --loss-bg: rgba(255, 82, 82, 0.12);
+
+  --font-display: "IBM Plex Mono", ui-monospace, monospace;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --shadow-card-hover: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-raised: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  --shadow-glow-accent: 0 0 0 1px var(--accent);
+
+  --radius: 0px;
+  --radius-sm: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent-bg);
+  color: var(--accent-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
